@@ -1,52 +1,76 @@
-# Library-Management-System
+# Library Management System (LMS)
 
-## Overview
+## Project Overview
 
-This project is a terminal-based application that **exemplifies** [illustrates by example] the Software Development Life Cycle (SDLC). It was developed as part of a Software Engineering (SEN) assignment at Caleb University.
+This project is a Python-based implementation of a Library Management System. It serves as a **salient** [most noticeable or important] demonstration of the Software Development Life Cycle (SDLC) for a 200-level Software Engineering assignment.
 
-## SDLC Methodology
+---
 
-The development followed a strict Waterfall model:
+## 1. Full SDLC Explanation
 
-1. **Planning:** Defined requirements for tracking `Book` and `Member` data.
-2. **Design:** Established a **robust** [sturdy/strong] architecture using Object-Oriented Programming (OOP).
-3. **Implementation:** Translated design into Python code.
-4. **Testing:** Verified book issuance logic.
-5. **Maintenance:** Version controlled via GitHub.
+### Phase 1: Planning
 
-## Nomenclatures
+The goal was to create a system to manage library assets. We identified two primary entities: **Book** and **Member**. The **Library** class acts as the central controller to **obviate** [remove/prevent] manual tracking errors.
 
-To maintain **congruity** [agreement or harmony] between design and implementation, the following names were used:
+### Phase 2: Design (Nomenclature Mapping)
 
-* `Book`: Entity representing library assets.
-* `Member`: Entity representing registered users.
-* `Library`: The controller class managing logic.
-* `issue_book`: The primary method for transaction processing.
+To ensure technical **fidelity** [faithfulness to a detail], the design names were strictly mapped to the implementation:
 
-## Installation
+| Design Entity | Attribute/Method Name | Purpose |
+| --- | --- | --- |
+| **Book** | `book_id`, `is_issued` | Tracks unique IDs and availability. |
+| **Member** | `member_id`, `name` | Tracks user identification. |
+| **Library** | `add_book()` | Method to populate the system. |
+| **Library** | `register_member()` | Method to enroll new users. |
+| **Library** | `issue_book()` | Logic for lending books. |
 
-Ensure you have Python installed, then clone the repository:
+### Phase 3: Implementation
 
-```bash
-git clone <your-repo-url>
-cd <repo-folder>
+The design was translated into a **modular** [consisting of separate parts] Python script (`lms_system.py`) using Object-Oriented Programming.
 
-```
+### Phase 4: Testing
 
-## Usage
+Unit testing was conducted to verify that `issue_book()` correctly toggles the `is_issued` boolean and prevents multiple checkouts of the same book.
 
-Run the script directly:
+### Phase 5: Deployment
 
-```bash
-python lms_system.py
+The project is hosted on GitHub to allow for version control and **perpetual** [never-ending/permanent] access to the source code.
+
+---
+
+## 2. Implementation Code
+
+The following names in the implementation are a **manifest** [clear/obvious] match to the design phase above.
+
+```python
+class Book:
+    def __init__(self, book_id, title, author):
+        self.book_id = book_id
+        self.is_issued = False
+
+class Member:
+    def __init__(self, member_id, name):
+        self.member_id = member_id
+
+class Library:
+    def add_book(self, book):
+        # Implementation logic...
+    
+    def register_member(self, member):
+        # Implementation logic...
+
+    def issue_book(self, book_id, member_id):
+        # Implementation logic...
 
 ```
 
 ---
 
-### Author
+## 3. How to Run
 
-**Cyber Security**
-*Ogemade Folarin, 200 Level*
+1. Clone the repository.
+2. Run the command: `python lms_system.py`
+
+> **Note:** This project was developed by Ogemade Folarin at Caleb University, Nigeria.
 
 ---
